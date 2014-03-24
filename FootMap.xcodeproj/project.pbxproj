@@ -44,6 +44,8 @@
 		71B64CB918E06FF80009688B /* via.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B64CA318E06FF80009688B /* via.png */; };
 		71B64CBA18E06FF80009688B /* via@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B64CA418E06FF80009688B /* via@2x.png */; };
 		71B64CBB18E06FF80009688B /* yback.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B64CA518E06FF80009688B /* yback.png */; };
+		71B64CBD18E073B10009688B /* YMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B64CBC18E073B10009688B /* YMapKit.framework */; };
+		71B64CBE18E073B10009688B /* YMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B64CBC18E073B10009688B /* YMapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,7 @@
 		71B64CA318E06FF80009688B /* via.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = via.png; sourceTree = "<group>"; };
 		71B64CA418E06FF80009688B /* via@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "via@2x.png"; sourceTree = "<group>"; };
 		71B64CA518E06FF80009688B /* yback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yback.png; sourceTree = "<group>"; };
+		71B64CBC18E073B10009688B /* YMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YMapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,7 @@
 				71B64C5D18E06ECB0009688B /* CoreGraphics.framework in Frameworks */,
 				71B64C6118E06ECB0009688B /* CoreData.framework in Frameworks */,
 				71B64C5F18E06ECB0009688B /* UIKit.framework in Frameworks */,
+				71B64CBD18E073B10009688B /* YMapKit.framework in Frameworks */,
 				71B64C5B18E06ECB0009688B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +122,7 @@
 				71B64C7918E06ECB0009688B /* XCTest.framework in Frameworks */,
 				71B64C7C18E06ECB0009688B /* CoreData.framework in Frameworks */,
 				71B64C7B18E06ECB0009688B /* UIKit.framework in Frameworks */,
+				71B64CBE18E073B10009688B /* YMapKit.framework in Frameworks */,
 				71B64C7A18E06ECB0009688B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +152,7 @@
 		71B64C5918E06ECB0009688B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71B64CBC18E073B10009688B /* YMapKit.framework */,
 				71B64C5A18E06ECB0009688B /* Foundation.framework */,
 				71B64C5C18E06ECB0009688B /* CoreGraphics.framework */,
 				71B64C5E18E06ECB0009688B /* UIKit.framework */,
@@ -463,6 +469,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FootMap/FootMap-Prefix.pch";
 				INFOPLIST_FILE = "FootMap/FootMap-Info.plist";
@@ -476,6 +486,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FootMap/FootMap-Prefix.pch";
 				INFOPLIST_FILE = "FootMap/FootMap-Info.plist";
@@ -492,6 +506,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FootMap/FootMap-Prefix.pch";
@@ -514,6 +529,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FootMap/FootMap-Prefix.pch";
