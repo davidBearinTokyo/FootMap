@@ -1,5 +1,5 @@
 //
-//  RearViewController.h
+//  MapViewController.h
 //  FootMap
 //
 //  Created by davidBear on 14-3-25.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RearViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface MapViewController : UIViewController
 
 @end

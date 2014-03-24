@@ -37,7 +37,7 @@
             [self.view addGestureRecognizer:self.navigationBarPanGestureRecognizer];
         }
         if (![self.navigationItem leftBarButtonItem]) {
-            UIBarButtonItem *revealButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sppiner.png"] style:UIBarButtonItemStyleBordered target:self.navigationController.parentViewController action:@selector(revealToggle:)];
+            UIBarButtonItem *revealButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Details.png"] style:UIBarButtonItemStyleBordered target:self.navigationController.parentViewController action:@selector(revealToggle:)];
              self.navigationItem.leftBarButtonItem = revealButton;
         }
     }

@@ -6,7 +6,10 @@
 //  Copyright (c) 2014年 Atirun. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
+
+@class  ZUUIRevealController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -15,6 +18,8 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (strong, nonatomic) ZUUIRevealController *bothSidesController;
+
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

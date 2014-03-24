@@ -7,18 +7,34 @@
 //
 
 #import "AppDelegate.h"
+#import "ZUUIRevealController.h"
+#import "RearViewController.h"
+#import "FrontViewController.h"
 
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize bothSidesController;
+
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    RearViewController *rearViewController = [[RearViewController alloc] initWithNibName:NULL bundle:nil];
+    FrontViewController *frontViewController = [[FrontViewController alloc] initWithNibName:NULL bundle:nil];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+    
+    self.bothSidesController = [[ZUUIRevealController alloc] initWithFrontViewController:navigationController rearViewController:rearViewController];
+    self.window.rootViewController = self.bothSidesController;
+    [self.window makeKeyAndVisible];
+    
+    
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
