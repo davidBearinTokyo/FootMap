@@ -7,17 +7,16 @@
 //
 
 #import "AppDelegate.h"
-#import "ZUUIRevealController.h"
 #import "RearViewController.h"
 #import "FrontViewController.h"
+#import "RevealViewController.h"
 
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-@synthesize bothSidesController;
-
+@synthesize viewController = _viewController;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -29,9 +28,12 @@
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
     
-    self.bothSidesController = [[ZUUIRevealController alloc] initWithFrontViewController:navigationController rearViewController:rearViewController];
-    self.window.rootViewController = self.bothSidesController;
+    RevealViewController *revealController = [[RevealViewController alloc] initWithFrontViewController:navigationController rearViewController:rearViewController];
+	self.viewController = revealController;
+    self.window.rootViewController = self.viewController;
+    
     [self.window makeKeyAndVisible];
+    
     
     
     // Override point for customization after application launch.

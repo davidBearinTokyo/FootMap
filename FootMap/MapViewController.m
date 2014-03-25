@@ -9,24 +9,44 @@
 #import "MapViewController.h"
 
 @interface MapViewController ()
-
+@property(strong, nonatomic) UIPanGestureRecognizer *navigationBarPanGestureRecognizer;
 @end
 
 @implementation MapViewController
+@synthesize navigationBarPanGestureRecognizer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+       self.view.backgroundColor = [UIColor whiteColor];
     }
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if ([self.navigationController.parentViewController respondsToSelector:@selector(revealGesture:)] && [self.navigationController.parentViewController respondsToSelector:@selector(revealToggle:)]){
+        if (![[self.navigationController.navigationBar gestureRecognizers] containsObject: self.navigationBarPanGestureRecognizer]) {
+            self.navigationBarPanGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self.navigationController.parentViewController action:@selector(revealGesture:)];
+            [self.navigationController.navigationBar addGestureRecognizer:self.navigationBarPanGestureRecognizer];
+        }
+        if(![[self.view gestureRecognizers] containsObject: self.navigationBarPanGestureRecognizer]){
+            self.navigationBarPanGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self.navigationController.parentViewController action:@selector(revealGesture:)];
+            [self.view addGestureRecognizer:self.navigationBarPanGestureRecognizer];
+        }
+        if (![self.navigationItem leftBarButtonItem]) {
+            UIBarButtonItem *revealButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Details.png"] style:UIBarButtonItemStyleBordered target:self.navigationController.parentViewController action:@selector(revealToggle:)];
+            self.navigationItem.leftBarButtonItem = revealButton;
+        }
+    }
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blackColor];
+    NSLog(@"Map View awaken!");
     // Do any additional setup after loading the view.
 }
 

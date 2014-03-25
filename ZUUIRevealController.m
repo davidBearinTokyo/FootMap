@@ -432,7 +432,7 @@
 	
 	if (animated)
 	{
-		[UIView animateWithDuration:0.15f delay:0.0f options:UIViewAnimationCurveEaseOut animations:^{
+		[UIView animateWithDuration:0.15f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
 			self.frontView.frame = CGRectMake(xSwapOffsetExpanded, 0.0f, self.frontView.frame.size.width, self.frontView.frame.size.height);
 		}
 		completion:^(BOOL finished)
@@ -443,7 +443,7 @@
 			 
 			[self _addFrontViewControllerToHierarchy:newFrontViewController];
 			 
-			[UIView animateWithDuration:0.225f delay:0.0f options:UIViewAnimationCurveEaseIn animations:^{
+			[UIView animateWithDuration:0.225f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
 				self.frontView.frame = CGRectMake(xSwapOffsetNormal, 0.0f, self.frontView.frame.size.width, self.frontView.frame.size.height);
 			}
 			completion:^(BOOL finished)
@@ -500,19 +500,23 @@
 - (void)_removeFrontViewControllerFromHierarchy:(UIViewController *)frontViewController
 {
 	[frontViewController.view removeFromSuperview];
+    /*
 	if ([frontViewController respondsToSelector:@selector(removeFromParentViewController:)])
 	{
 		[frontViewController removeFromParentViewController];		
 	}
+     */
 }
 
 - (void)_removeRearViewControllerFromHierarchy:(UIViewController *)rearViewController
 {
 	[rearViewController.view removeFromSuperview];
+    /*
 	if ([rearViewController respondsToSelector:@selector(removeFromParentViewController:)])
 	{
 		[rearViewController removeFromParentViewController];
 	}
+     */
 }
 
 #pragma mark - View lifecycle

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZUUIRevealController.h"
 @interface MapViewController : UIViewController
 
 @end

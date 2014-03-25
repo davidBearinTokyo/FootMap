@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F904F5718E13A7A00F2DDCE /* RevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F904F5618E13A7A00F2DDCE /* RevealViewController.m */; };
 		7108EAAA18E0945700EA2028 /* ZUUIRevealController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7108EAA918E0945700EA2028 /* ZUUIRevealController.m */; };
 		7108EAAE18E0958800EA2028 /* RearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7108EAAD18E0958800EA2028 /* RearViewController.m */; };
 		7108EAB418E0961900EA2028 /* FrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7108EAB318E0961900EA2028 /* FrontViewController.m */; };
@@ -68,6 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F904F5518E13A7A00F2DDCE /* RevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealViewController.h; sourceTree = "<group>"; };
+		1F904F5618E13A7A00F2DDCE /* RevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevealViewController.m; sourceTree = "<group>"; };
 		7108EAA818E0945700EA2028 /* ZUUIRevealController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZUUIRevealController.h; sourceTree = "<group>"; };
 		7108EAA918E0945700EA2028 /* ZUUIRevealController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZUUIRevealController.m; sourceTree = "<group>"; };
 		7108EAAC18E0958800EA2028 /* RearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewController.h; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 		7108EAAB18E0955F00EA2028 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1F904F5518E13A7A00F2DDCE /* RevealViewController.h */,
+				1F904F5618E13A7A00F2DDCE /* RevealViewController.m */,
 				7108EAAC18E0958800EA2028 /* RearViewController.h */,
 				7108EAAD18E0958800EA2028 /* RearViewController.m */,
 				7108EAB218E0961900EA2028 /* FrontViewController.h */,
@@ -430,6 +435,7 @@
 				71B64C6918E06ECB0009688B /* main.m in Sources */,
 				7108EAAE18E0958800EA2028 /* RearViewController.m in Sources */,
 				7140107518E0B61C00312080 /* MapViewController.m in Sources */,
+				1F904F5718E13A7A00F2DDCE /* RevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

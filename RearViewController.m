@@ -9,13 +9,13 @@
 
 
 #import "RearViewController.h"
+#import "RevealViewController.h"
 #import "MapViewController.h"
-#import "FrontViewController.h"
+
 
 @interface RearViewController ()
 @property(strong, nonatomic) UITableView *rearTableView;
 @property (strong, nonatomic) MapViewController *mapViewController;
-@property (strong, nonatomic) FrontViewController *frontViewController;
 
 @end
 
@@ -42,7 +42,6 @@
     [self.rearTableView setSeparatorInset:UIEdgeInsetsZero];
     [self.view addSubview:self.rearTableView];
     
-    self.frontViewController = [[FrontViewController alloc] initWithNibName:NULL bundle:nil];
     
 }
 
@@ -124,20 +123,15 @@
     }
     return heightForRow;
 }
-
 #pragma mark - enter the next view;
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([tableView isEqual:self.rearTableView]) {
-        switch (indexPath.row) {
-            case 1:
-                /*
-                self.mapViewController = [[MapViewController alloc] initWithNibName:NULL bundle:nil];
-                UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.mapViewController ];
-                [self setFrontViewController:navigationController];
-                */
-                break;
-                
-        }
+	RevealViewController *revealController = [self.parentViewController isKindOfClass:[RevealViewController class]] ? (RevealViewController *)self.parentViewController : nil;
+    
+    if (indexPath.row == 1) {
+        
+            MapViewController *yahooMapViewController = [[MapViewController alloc] init];
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:yahooMapViewController];
+            [revealController setFrontViewController:navigationController];
     }
 }
 

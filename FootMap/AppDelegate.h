@@ -9,8 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class  ZUUIRevealController;
-
+@class RevealViewController;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -18,8 +17,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (strong, nonatomic) ZUUIRevealController *bothSidesController;
-
+@property (strong, nonatomic) RevealViewController *viewController;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
