@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1F904F5718E13A7A00F2DDCE /* RevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F904F5618E13A7A00F2DDCE /* RevealViewController.m */; };
+		1F904F5918E143FB00F2DDCE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F904F5818E143FB00F2DDCE /* SystemConfiguration.framework */; };
+		1F904F5B18E1440500F2DDCE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F904F5A18E1440500F2DDCE /* CoreLocation.framework */; };
+		1F904F5D18E1441000F2DDCE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F904F5C18E1441000F2DDCE /* OpenGLES.framework */; };
+		1F904F5F18E1441500F2DDCE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F904F5E18E1441500F2DDCE /* QuartzCore.framework */; };
+		1F904F6118E1441F00F2DDCE /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F904F6018E1441F00F2DDCE /* libxml2.2.dylib */; };
 		7108EAAA18E0945700EA2028 /* ZUUIRevealController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7108EAA918E0945700EA2028 /* ZUUIRevealController.m */; };
 		7108EAAE18E0958800EA2028 /* RearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7108EAAD18E0958800EA2028 /* RearViewController.m */; };
 		7108EAB418E0961900EA2028 /* FrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7108EAB318E0961900EA2028 /* FrontViewController.m */; };
@@ -71,6 +76,11 @@
 /* Begin PBXFileReference section */
 		1F904F5518E13A7A00F2DDCE /* RevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealViewController.h; sourceTree = "<group>"; };
 		1F904F5618E13A7A00F2DDCE /* RevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevealViewController.m; sourceTree = "<group>"; };
+		1F904F5818E143FB00F2DDCE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1F904F5A18E1440500F2DDCE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1F904F5C18E1441000F2DDCE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		1F904F5E18E1441500F2DDCE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1F904F6018E1441F00F2DDCE /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		7108EAA818E0945700EA2028 /* ZUUIRevealController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZUUIRevealController.h; sourceTree = "<group>"; };
 		7108EAA918E0945700EA2028 /* ZUUIRevealController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZUUIRevealController.m; sourceTree = "<group>"; };
 		7108EAAC18E0958800EA2028 /* RearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewController.h; sourceTree = "<group>"; };
@@ -132,9 +142,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F904F6118E1441F00F2DDCE /* libxml2.2.dylib in Frameworks */,
+				1F904F5F18E1441500F2DDCE /* QuartzCore.framework in Frameworks */,
+				1F904F5D18E1441000F2DDCE /* OpenGLES.framework in Frameworks */,
+				1F904F5B18E1440500F2DDCE /* CoreLocation.framework in Frameworks */,
+				1F904F5918E143FB00F2DDCE /* SystemConfiguration.framework in Frameworks */,
+				71B64C5F18E06ECB0009688B /* UIKit.framework in Frameworks */,
 				71B64C5D18E06ECB0009688B /* CoreGraphics.framework in Frameworks */,
 				71B64C6118E06ECB0009688B /* CoreData.framework in Frameworks */,
-				71B64C5F18E06ECB0009688B /* UIKit.framework in Frameworks */,
 				71B64CBD18E073B10009688B /* YMapKit.framework in Frameworks */,
 				71B64C5B18E06ECB0009688B /* Foundation.framework in Frameworks */,
 			);
@@ -223,6 +238,11 @@
 		71B64C5918E06ECB0009688B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F904F6018E1441F00F2DDCE /* libxml2.2.dylib */,
+				1F904F5E18E1441500F2DDCE /* QuartzCore.framework */,
+				1F904F5C18E1441000F2DDCE /* OpenGLES.framework */,
+				1F904F5A18E1440500F2DDCE /* CoreLocation.framework */,
+				1F904F5818E143FB00F2DDCE /* SystemConfiguration.framework */,
 				71B64CBC18E073B10009688B /* YMapKit.framework */,
 				71B64C5A18E06ECB0009688B /* Foundation.framework */,
 				71B64C5C18E06ECB0009688B /* CoreGraphics.framework */,

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <YMapKit/YMapKit.h>
 #import "ZUUIRevealController.h"
-@interface MapViewController : UIViewController
-
+@interface MapViewController : UIViewController <YMKMapViewDelegate,CLLocationManagerDelegate>
 @end

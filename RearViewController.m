@@ -15,13 +15,13 @@
 
 @interface RearViewController ()
 @property(strong, nonatomic) UITableView *rearTableView;
-@property (strong, nonatomic) MapViewController *mapViewController;
+@property (strong, nonatomic) MapViewController *yahooMapViewController;
 
 @end
 
 @implementation RearViewController
 @synthesize rearTableView;
-@synthesize mapViewController;
+@synthesize yahooMapViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,7 +41,8 @@
     //self.rearTableView.scrollEnabled = FALSE;
     [self.rearTableView setSeparatorInset:UIEdgeInsetsZero];
     [self.view addSubview:self.rearTableView];
-    
+    // initial the MapView
+    self.yahooMapViewController = [[MapViewController alloc] init];
     
 }
 
@@ -128,8 +129,6 @@
 	RevealViewController *revealController = [self.parentViewController isKindOfClass:[RevealViewController class]] ? (RevealViewController *)self.parentViewController : nil;
     
     if (indexPath.row == 1) {
-        
-            MapViewController *yahooMapViewController = [[MapViewController alloc] init];
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:yahooMapViewController];
             [revealController setFrontViewController:navigationController];
     }
