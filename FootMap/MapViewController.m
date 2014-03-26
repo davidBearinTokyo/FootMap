@@ -5,6 +5,7 @@
 //  Created by davidBear on 14-3-25.
 //  Copyright (c) 2014年 Atirun. All rights reserved.
 //
+// 地图问题需要解决！
 
 #import "MapViewController.h"
 #import <YMapKit/YMapKit.h>
@@ -82,7 +83,7 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // new dates
 }
 
 
