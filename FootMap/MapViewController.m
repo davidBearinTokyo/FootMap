@@ -5,7 +5,7 @@
 //  Created by davidBear on 14-3-25.
 //  Copyright (c) 2014年 Atirun. All rights reserved.
 //
-// 地图问题需要解决！// 地图问题需要解决！
+// This program will be taken by my self
 
 #import "MapViewController.h"
 #import <YMapKit/YMapKit.h>
