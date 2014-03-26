@@ -61,8 +61,8 @@
     //--- Require the nowa position axis ---//
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters; //
-    self.locationManager.distanceFilter = 1;  // 5m移動するごとに取得
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; //
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;  // 5m移動するごとに取得
     
     //--- Display the position ---//
     self.cityMap = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height-64) appid:@"dj0zaiZpPVpUVXlhMFlTaDRNUCZzPWNvbnN1bWVyc2VjcmV0Jng9MWI-"];
@@ -71,11 +71,11 @@
     cityMap.zoomEnabled = TRUE;
     cityMap.showsUserLocation = TRUE;
     // initialize the position
-    CLLocationCoordinate2D center;
-    center.latitude = 35.6657214;
-    center.longitude = 139.7310058;
-    self.cityMap.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002));
+    [self.locationManager startUpdatingLocation];
     [self.view addSubview:self.cityMap];
+    
+    
+    
 }
 
 
@@ -100,12 +100,32 @@
     CLLocationCoordinate2D coordinate;
     coordinate.latitude = newLocation.coordinate.latitude;
     coordinate.longitude = newLocation.coordinate.longitude;
-    self.cityMap.region = YMKCoordinateRegionMake(coordinate, YMKCoordinateSpanMake(0.002, 0.002));
     
+    self.cityMap.region = YMKCoordinateRegionMake(coordinate, YMKCoordinateSpanMake(0.005, 0.005));
+    
+    YMKCircle *circle = [YMKCircle circleWithCenterCoordinate:coordinate radius:50];
+    [self.cityMap addOverlay: circle];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     [self.locationManager stopUpdatingLocation];
+}
+
+#pragma mark - Define the circle
+- (YMKOverlayView*)mapView:(YMKMapView *)mapView viewForOverlay:(id <YMKOverlay>)overlay
+{
+    //追加されたoverlayがYMKCircleか確認
+    if([overlay isKindOfClass:[YMKCircle class]] ){
+        //YMKCircleViewを作成
+        YMKCircleView *wkYMKCircleView = [[YMKCircleView alloc] initWithCircle:overlay];
+        //ラインの色を青に設定
+        wkYMKCircleView.strokeColor = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:0.1];
+        wkYMKCircleView.fillColor =  [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:0.1];
+        //ラインの太さ
+        wkYMKCircleView.lineWidth = 5;
+        return wkYMKCircleView;
+    }
+    return nil;
 }
 
 
